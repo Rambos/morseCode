@@ -6,11 +6,14 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <div class="form-flex">
-        <input id="input" class="form-control" type="text" placeholder="请输入内容" />
-        <button id="button">转换</button>
-    </div>
-    <div id="view"></div>
+    <section class="wrapper" id="wrapper">
+        <div class="form-flex">
+            <input id="input" class="form-control" type="text" placeholder="请输入内容" />
+            <button id="button">复制</button>
+        </div>
+        <div id="view"></div>
+    </section>
+    <div id="toast">复制成功</div>
     <script type="text/javascript">
         window.nodeRequire = require;
         delete window.require;

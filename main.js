@@ -20,7 +20,9 @@ function createWindow() {
         resizable: false,
         autoHideMenuBar: true,
         useContentSize: true,
-        maximizable: false
+        maximizable: false,
+        alwaysOnTop: true,
+        transparent: true
     })
 
     // 加载应用的 index.html。
