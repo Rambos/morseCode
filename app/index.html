@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>摩斯电码</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="form-flex">
+        <input id="input" class="form-control" type="text" placeholder="请输入内容" />
+        <button id="button">转换</button>
+    </div>
+    <div id="view"></div>
+    <script type="text/javascript">
+        window.nodeRequire = require;
+        delete window.require;
+        delete window.exports;
+        delete window.module;
+    </script>
+    <script type="text/javascript" src="libs/xmorse.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
