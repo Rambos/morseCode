@@ -1,0 +1,22 @@
+{
+  "name": "morseCode",
+  "version": "0.0.1",
+  "author": "Rambo <alisa@kzcn.cc>",
+  "main": "./main.js",
+  "description": "用electron编写的摩斯密码转换软件",
+  "scripts": {
+    "start": "electron .",
+    "dist": "build --platform=win32 --arch=x64"
+  },
+  "build": {
+    "asar": true,
+    "appId": "com.electron.morseCode",
+    "win": {
+      "icon": "./icon.ico"
+    }
+  },
+  "devDependencies": {
+    "asar": "^0.13.0",
+    "electron-builder": "^13.11.1"
+  }
+}
