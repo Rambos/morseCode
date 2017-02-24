@@ -1,6 +1,11 @@
+/*
+* @Author: Rambo
+* @Date:   2017-02-23 17:08:44
+*/
 const {
     app,
-    BrowserWindow
+    BrowserWindow,
+    ipcMain
 } = require('electron')
 const path = require('path')
 const url = require('url')
@@ -9,7 +14,6 @@ const url = require('url')
 // 保持一个对于 window 对象的全局引用，如果你不这样做，
 // 当 JavaScript 对象被垃圾回收， window 会被自动地关闭
 let win
-
 function createWindow() {
     // 创建浏览器窗口。
     win = new BrowserWindow({
@@ -17,19 +21,19 @@ function createWindow() {
         height: 110,
         center: true,
         frame: false,
-        resizable: false,
+        // resizable: false,
         autoHideMenuBar: true,
         useContentSize: true,
-        maximizable: false,
+        // maximizable: false,
         alwaysOnTop: true,
-        transparent: true
+        // transparent: true
+        // 
     })
 
     // 加载应用的 index.html。
     win.loadURL(url.format({
         pathname: path.join(__dirname, '/app/index.html'),
-        protocol: 'file:',
-        slashes: true
+        protocol: 'file:'
     }))
 
     // 打开开发者工具。
@@ -43,6 +47,33 @@ function createWindow() {
         win = null
     })
 }
+
+
+ipcMain.on('open-settings-window', function () {
+    if (settingsWindow) {
+        return;
+    }
+
+    settingsWindow = new BrowserWindow({
+        frame: false,
+        height: 370,
+        resizable: false,
+        width: 100,
+        autoHideMenuBar: true,
+    });
+
+    settingsWindow.loadUrl('file://' + __dirname + '/app/settings.html');
+
+    settingsWindow.on('closed', function () {
+        settingsWindow = null;
+    });
+});
+
+ipcMain.on('close-settings-window', function () {
+    if (settingsWindow) {
+        settingsWindow.close();
+    }
+});
 
 // Electron 会在初始化后并准备
 // 创建浏览器窗口时，调用这个函数。

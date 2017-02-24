@@ -1,27 +1,30 @@
 {
-    "name": "morseCode",
-    "version": "0.0.2",
-    "author": "Rambo <alisa@kzcn.cc>",
-    "main": "./main.js",
-    "description": "用electron编写的摩斯密码转换软件",
-    "scripts": {
-        "start": "electron .",
-        "dist:win": "build --win --x64",
-        "dist:mac": "build --mac"
+  "name": "morseCode",
+  "version": "0.0.2",
+  "author": "Rambo <alisa@kzcn.cc>",
+  "main": "./main.js",
+  "description": "用electron编写的摩斯密码转换软件",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "build --win --x64",
+    "dist:mac": "build --mac"
+  },
+  "build": {
+    "asar": true,
+    "appId": "com.electron.morseCode",
+    "compression": "maximum",
+    "dmg": {
+      "icon": "./icon.icns"
     },
-    "build": {
-        "asar": true,
-        "appId": "com.electron.morseCode",
-        "compression": "maximum",
-        "dmg": {
-            "icon": "./icon.icns"
-        },
-        "win": {
-            "icon": "./icon.ico"
-        }
-    },
-    "devDependencies": {
-        "electron-builder": "^13.11.1",
-        "electron-prebuilt": "^1.4.13"
+    "win": {
+      "icon": "./icon.ico"
     }
+  },
+  "devDependencies": {
+    "electron-builder": "^13.11.1",
+    "electron-prebuilt": "^1.4.13"
+  },
+  "dependencies": {
+    "electron-require": "^0.3.0"
+  }
 }

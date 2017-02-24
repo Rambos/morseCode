@@ -7,20 +7,18 @@
 </head>
 <body>
     <section class="wrapper" id="wrapper">
-        <div class="form-flex">
-            <input id="input" class="form-control" type="text" placeholder="请输入内容" />
-            <button id="button">复制</button>
+        <div class="input-group">
+            <input id="input" placeholder="请输入内容" type="text" class="form-control">        
+            <div class="input-group-btn">
+                <button type="button" id="copy" class="btn">复制</button>
+                <button type="button" class="btn dropdown-toggle" id="dropdown">
+                    <span class="icon-setting"></span>
+                </button>
+            </div>
         </div>
         <div id="view"></div>
     </section>
     <div id="toast">复制成功</div>
-    <script type="text/javascript">
-        window.nodeRequire = require;
-        delete window.require;
-        delete window.exports;
-        delete window.module;
-    </script>
-    <script type="text/javascript" src="libs/xmorse.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
