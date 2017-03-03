@@ -1,6 +1,6 @@
 {
   "name": "morseCode",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Rambo <alisa@kzcn.cc>",
   "main": "./main.js",
   "description": "用electron编写的摩斯密码转换软件",

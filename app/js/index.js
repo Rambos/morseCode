@@ -33,5 +33,11 @@ copy.addEventListener('click', function() {
 });
 
 dropdown.addEventListener('click', function(e) {
-    console.log(ipcRenderer);
+    if (!this.classList.contains('open')) {
+        this.classList.add('open');
+        ipcRenderer.send('open-settings-window');
+        return;
+    }
+    ipcRenderer.send('close-settings-window');
+    this.classList.remove('open');
 })
